@@ -38,10 +38,11 @@ class LoopDataLoader:
 
 
 class MultiTaskDataLoader:
-    def __init__(self, datasets, batch_size):
+    def __init__(self, datasets, batch_size_list):
         self.datasets = datasets
-        self.batch_size = batch_size
-        self.dataloader = [LoopDataLoader(dataset, batch_size) for dataset in datasets]
+        self.batch_size_list = batch_size_list
+        self.dataloader = [LoopDataLoader(dataset, batch_size) for dataset, batch_size in
+                           zip(datasets, batch_size_list)]
 
     def __iter__(self):
         return self

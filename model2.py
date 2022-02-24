@@ -1,4 +1,4 @@
-from transformers.models.bert.modeling_bert import SequenceClassifierOutput, BertModel, BertPreTrainedModel
+from annlp import SequenceClassifierOutput, BertModel, BertPreTrainedModel
 import torch.nn as nn
 
 
